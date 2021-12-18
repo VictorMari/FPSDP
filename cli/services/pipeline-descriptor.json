@@ -1,0 +1,33 @@
+{
+  "deployment-type": "docker-compose",
+  "stages": {
+    "ingestion": [
+      {
+        "type": "series",
+        "protocol": "http",
+        "persistence": true,
+        "polling": true,
+        "custom-config": "./cli/configs/prometheus/prometheus.yml",
+        "id": "backend1",
+        "implementation": "Prometheus"
+      },
+      {
+        "type": "panel",
+        "protocol": "http",
+        "persistence": true,
+        "custom-config": "./cli/configs/grafana/grafana.ini",
+        "implementation": "Grafana",
+        "id": "view1"
+      },
+      {
+        "type": "metrics",
+        "protocol": "http",
+        "persistence": true,
+        "implementation": "node-exporter",
+        "id": "view2"
+      }
+    ],
+    "processing": [],
+    "output": ""
+  }
+}

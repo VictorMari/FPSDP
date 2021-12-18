@@ -1,0 +1,30 @@
+{
+  "type": "Group",
+  "label": "Iaac input form",
+  "elements": [
+    {
+      "type": "VerticalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/stages/properties/ingestion"
+        },
+       
+        {
+          "type": "HorizontalLayout",
+          "label": "deployment type",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/stages/properties/output"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/deployment-type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
